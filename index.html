@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng chuyển đổi tiền tệ</title>
+</head>
+<body>
+
+    <table>
+        <tr style="font-size: 10px">
+            <th>Amount</th>
+            <th>From Currency</th>
+            <th>To Currency</th>
+        </tr>
+        
+        <tr>
+            <td><input type="text" id="number"></td>
+            <td>
+                <select name="" id="giatri1">
+                <option value="b">USD</option>
+                <option value="a">Việt Nam</option>
+            </select>
+            </td>
+            <td>
+                <select name="" id="giatri2">
+                    <option value="a">Việt Nam</option>
+                    <option value="b">USD</option>
+                </select>
+            </td>
+            <td><button onclick="kq()">Convert</button></td>
+        </tr>
+    </table>
+
+    <p id="ok"></p>
+
+<script>
+    function kq(){
+        let selec1 = document.getElementById('giatri1').value;
+        let selec2 = document.getElementById('giatri2').value;
+        let number = document.getElementById('number').value;
+        let ketqua;
+
+        if (selec1 == selec2){
+            ketqua = ( 'Kết quả:' + number)
+        }
+        if ( selec1 == "a" && selec2 == "b") {
+            ketqua = ( 'Kết quả:' + number / 23000)
+        }
+        if( selec1 == "b" && selec2 == "a") {
+            ketqua = ( 'Kết quả:' + number * 23000)
+        }
+        document.getElementById('ok').innerHTML = ketqua
+    }
+
+</script>
+</body>
+</html>
